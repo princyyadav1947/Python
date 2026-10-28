@@ -1,0 +1,214 @@
+Practical 1: Age Verification System
+
+try:
+    age = int(input("Enter your age: "))
+
+    if age < 0 or age > 120:
+        raise ValueError("Age must be between 0 and 120.")
+
+    print("Valid age:", age)
+
+except ValueError as e:
+    print("Error:", e)
+
+Practical 2: Product Price Checker
+
+try:
+    price = float(input("Enter product price: "))
+
+    if price < 0:
+        raise ValueError("Price cannot be negative.")
+
+    print("Product price:", price)
+
+except ValueError as e:
+    print("Invalid price:", e)
+
+Practical 3: Tuple Element Access
+
+cities = (
+    "Jaunpur",
+    "Prayagraj",
+    "Varanasi",
+    "Lucknow",
+    "Delhi",
+    "Mumbai",
+    "Kolkata"
+)
+
+try:
+    position = int(input("Enter position (0-6): "))
+    print("City:", cities[position])
+
+except IndexError:
+    print("Error: Invalid position. Enter a position from 0 to 6.")
+
+except ValueError:
+    print("Error: Please enter an integer.")
+
+
+Practical 4: Contact Information Lookup
+
+contacts = {
+    "Aman": "9876543210",
+    "Priya": "9876501234",
+    "Rahul": "9876512340",
+    "Neha": "9876523450"
+}
+
+try:
+    name = input("Enter contact name: ")
+    print("Phone number:", contacts[name])
+
+except KeyError:
+    print("Error: Contact not found.")
+
+
+Practical 5: File Writing Operation
+
+try:
+    filename = input("Enter filename: ")
+    text = input("Enter text to write: ")
+
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(text)
+
+    print("Text written successfully.")
+
+except PermissionError:
+    print("Error: Permission denied. Cannot write to this file.")
+
+except OSError as e:
+    print("File error:", e)
+
+
+Practical 6: Valid Roll Number Input
+
+while True:
+    try:
+        roll_number = int(input("Enter a positive roll number: "))
+
+        if roll_number <= 0:
+            print("Roll number must be greater than zero.")
+            continue
+
+        print("Valid roll number:", roll_number)
+        break
+
+    except ValueError:
+        print("Invalid input. Please enter an integer.")
+
+
+Practical 7: Custom Exception for Voting Eligibility
+
+class NotEligibleToVoteError(Exception):
+    pass
+
+
+try:
+    age = int(input("Enter your age: "))
+
+    if age < 0:
+        raise ValueError("Age cannot be negative.")
+
+    if age < 18:
+        raise NotEligibleToVoteError(
+            "You must be at least 18 years old to vote."
+        )
+
+    print("You are eligible to vote.")
+
+except ValueError as e:
+    print("Invalid age:", e)
+
+except NotEligibleToVoteError as e:
+    print("Voting eligibility error:", e)
+
+
+Practical 8: Bank Account Deposit Validation
+
+try:
+    amount = float(input("Enter deposit amount: "))
+
+    if amount <= 0:
+        raise ValueError("Deposit amount must be greater than zero.")
+
+    print("Deposit successful.")
+    print("Deposit amount:", amount)
+
+except ValueError as e:
+    print("Invalid deposit:", e)
+
+
+Practical 9: Shopping Cart Quantity Check
+
+try:
+    quantity = int(input("Enter item quantity: "))
+
+    if quantity < 1:
+        raise ValueError("Quantity must be at least 1.")
+
+    print("Quantity added to cart:", quantity)
+
+except ValueError as e:
+    print("Invalid quantity:", e)
+
+
+Practical 10: Password Strength Validator
+
+try:
+    password = input("Enter your password: ")
+
+    if len(password) < 8:
+        raise ValueError(
+            "Password must contain at least 8 characters."
+        )
+
+    print("Password length is valid.")
+
+except ValueError as e:
+    print("Invalid password:", e)
+
+
+Practical 11: Student Grade Calculator
+
+try:
+    marks1 = float(input("Enter marks in Subject 1 (0-100): "))
+    marks2 = float(input("Enter marks in Subject 2 (0-100): "))
+    marks3 = float(input("Enter marks in Subject 3 (0-100): "))
+
+    marks = [marks1, marks2, marks3]
+
+    if any(mark < 0 or mark > 100 for mark in marks):
+        raise ValueError("Marks must be between 0 and 100.")
+
+    total = sum(marks)
+    percentage = total / 3
+
+    print("Total marks:", total, "/ 300")
+    print("Percentage:", round(percentage, 2), "%")
+
+except ValueError as e:
+    print("Invalid marks:", e)
+
+
+#Practical 12: ATM PIN Verification
+
+CORRECT_PIN = "1234"
+MAX_ATTEMPTS = 3
+
+try:
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        pin = input("Enter your 4-digit PIN: ")
+
+        if pin == CORRECT_PIN:
+            print("PIN verified successfully.")
+            break
+
+        print("Incorrect PIN.")
+
+    else:
+        raise ValueError("Three unsuccessful attempts. Access denied.")
+
+except ValueError as e:
+    print("Error:", e)
