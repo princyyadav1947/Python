@@ -1,0 +1,212 @@
+class aipa:
+    pass
+
+std1=aipa()
+std2=aipa()
+
+print(std1)
+print(std2)
+
+class aipa :
+    def __int__(self,name,roll_no,trade ,marks): #contructor
+        self.name=name
+        self.roll_no=roll_no
+        self.trade=trade
+        self.marks=marks
+
+std1=aipa("Princy",1,"aipa",75)
+std2=aipa("Aditi",2,"aipa",85)
+
+
+
+print(std1.name)
+print(std1.roll_no)
+print(std1.trade)
+print(std1.marks)
+
+print(std2.name)
+print(std2.roll_no)
+print(std2.trade)
+print(std2.marks)
+
+
+class Student :
+    def __init__(self,name,roll_no,trade ,marks): #contructor
+        self.name=name
+        self.roll_no=roll_no
+        self.trade=trade
+        self.marks=marks
+
+    def display_details(self):
+            print("Name:",self.name)
+            print("Roll No:",self.roll_no)
+            print("Trade:",self.trade)
+            print("Marks:",self.marks)
+
+    def check_result(self):
+                if self.marks>=40:
+                    print("Pass")
+                else:
+                    print("Fail")
+
+    def percentage(self,total_marks):
+          return (self.marks/total_marks)*100             
+
+students1=Student("Princy",1,"AIPA",75)
+students2=Student("Anushka",2,"AIPA",85)
+
+students1.display_details()
+students1.check_result()
+
+students2.display_details()
+students2.check_result()
+print(students1.percentage(100),"%")
+print(students2.percentage(100),"%")
+
+
+
+VEHICLE DATA.
+
+class Vehicle:
+    def __init__(self, name, model, colour, price, speed):
+        self.name = name
+        self.model = model
+        self.colour = colour
+        self.price = price
+        self.speed = speed
+
+    def display_details(self):
+        print("Name:", self.name)
+        print("Model:", self.model)
+        print("Colour:", self.colour)
+        print("Price:", self.price)
+        print("Speed:", self.speed, "km/h")
+
+    def check_price(self):
+        if self.price >= 1000000:
+            print("Expensive car")
+        else:
+            print("Affordable car")
+
+    def check_speed(self):
+        if self.speed >= 150:
+            print("High speed")
+        else:
+            print("Moderate speed")
+
+    def discount(self, percent):
+        amount = self.price * percent / 100
+        final_price = self.price - amount
+
+        print("Discount:", amount)
+        print("Final Price:", final_price)
+
+
+car1 = Vehicle("Thar", "LX", "Black", 1500000, 155)
+
+
+car2 = Vehicle("Scorpio", "N", "White", 1800000, 165)
+
+
+
+car1.display_details()
+car1.check_price()
+car1.check_speed()
+car1.discount(10)
+
+
+car2.display_details()
+car2.check_price()
+car2.check_speed()
+car2.discount(5)
+
+Access modifiers
+
+class student :
+    def __init__(self):
+
+     self.name="Anushka"
+     self_trade="AIPA"
+     self__marks=85
+
+     def show__marks(self):
+        return self__marks
+     
+
+     std=student()
+     print(std.name)
+     print(std._trade)
+     print(std.show__marks())
+
+
+
+class BankAccount:
+    def __init__(self,accountname, balance):
+
+        self.accountname = accountname
+        self.__balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print("Deposit successful!")
+        else:
+            print("Invalid amount!")
+
+    def withdraw1(self, amount):
+        if amount <= 0:
+            print("Invalid amount!")
+        elif amount <= self.__balance:
+            self.__balance -= amount
+            print("Withdraw1 successful!")
+        else:
+            print("Insufficient amount!")
+
+    def check_balance(self):
+        return self.__balance
+        print(user.check_balance())
+
+
+User = BankAccount("Princy", 100)
+
+print(User.accountname)
+User.deposit(0)
+print(User.check_balance())
+
+
+class BankAccount:
+    def __init__(self, accountname, balance):
+        self.accountname=accountname
+        self.__balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print("Deposit successful!")
+        else:
+            print("Invalid amount!")
+
+    def withdrawl(self, amount):
+        if amount <= 0:
+            print("Invalid amount!")
+        elif amount <= self.__balance:
+            self.__balance -= amount
+            print("Withdrawl successful!")
+        else:
+            print("Insufficient amount!")
+
+    def check_balance(self):
+        return self.__balance
+        print(user.check__balance())
+
+
+User = BankAccount("Princy", 100)
+
+print(User.accountname)
+User.deposit(1000)
+User.withdrawl(500)
+print(User.check_balance())
+
+   
+
+
